@@ -1,9 +1,13 @@
-const toggleBGMode = () => {
-  if (document.body.style.backgroundColor == "black") {
-    document.body.style.backgroundColor = "white";
-  } else {
-    document.body.style.backgroundColor = "black";
-  }
+if (getCookie(document, "bg") == "black") {
+	toggleBGMode(document);
 }
 
-toggleBGMode()
+
+document.getElementById("bg-btn").onclick = () => {
+	toggleBGMode(document);
+	setCookie(document, "bg", document.body.style.backgroundColor, 3652.5);
+};
+
+document.getElementById("home-btn").onclick = () => {
+	window.location.replace("./index");
+};
