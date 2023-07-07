@@ -1,13 +1,6 @@
-if (getCookie(document, "bg") == "black") {
-	toggleBGMode(document);
+if (getCookie(document, "bg") == null) {
+	setCookie(document, "bg", "on");
+} else {
+	toggleBGMode(window, isBGModeToggled(window));
+	setCookie(document, "bg", isBGModeToggled(window) ? "on" : "off");
 }
-
-
-document.getElementById("bg-btn").onclick = () => {
-	toggleBGMode(document);
-	setCookie(document, "bg", document.body.style.backgroundColor, 3652.5);
-};
-
-document.getElementById("home-btn").onclick = () => {
-	window.location.replace("./index");
-};
