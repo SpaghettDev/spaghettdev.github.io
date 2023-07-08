@@ -12,42 +12,31 @@
 		<link rel="manifest" href="/favicon/site.webmanifest">
 
 		<meta property="og:type" content="website">
-		<meta property="og:site_name" content="SpaghettDev's hut">
-		<meta property="og:title" content="SpaghettDev">
+		<meta property="og:title" content="SpaghettDev's website">
 		<meta property="og:description" content="All hail the navbar.">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:creator" content="@SpaghettDev">
+
+		<script src="/src/util.js"></script>
 	</head>
 	<body>
-		<nav class="navbar">
-			<ul>
-				<li><a class="navbar-hbutton" href="/" id="home-btn">Home</a></li>
-				<li><a class="navbar-hbutton" href="projects/" id="project-btn">Projects</a></li>
-				<!-- <li>
-					<a class="navbar-hbutton" href="#">Dropdown</a>
-					<ul>
-						<li><a class="navbar-hbutton" href="#">Cool option 1</a></li>
-						<li><a class="navbar-hbutton" href="#">Cooler option 2</a></li>
-						<li><a class="navbar-hbutton" href="#">Even cooler option 3</a></li>
-					</ul>
-				</li> -->
-				<li><a class="navbar-hbutton" href="contact/" id="contact-btn">Contact</a></li>
+		<script id="replace_with_navbar" src="/nav/nav.js"></script>
 
-				<li class="navbar-ntbutton right-aligned">
-					<button class="no-style right-aligned" id="bg-btn">
-						<svg id="bg-svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" stroke-linecap="round" stroke-linejoin="round"></path>
-						</svg>
-					</button>
-				</li>
-			</ul>
-		</nav>
+		<div id="cover"></div>
 
-		<center>
-			<p>404</p>
-		</center>
+		<div class="center-container">
+			<span>
+				<p style="text-align: center;">404</p>
+				<p id="reason">null</p>
+			</span>
+		</div>
 
-		<script src="./src/util.js"></script>
-		<script src="index.js"></script>
+		<footer>
+			<small>
+				Copyright © 2023 SpaghettDev. All Rights Reserved.
+			</small>
+		</footer>
+
+		<script src="404.js"></script>
 	</body>
 </html>

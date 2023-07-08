@@ -22,6 +22,17 @@ body {
 }
 
 
+#cover {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #000;
+	z-index: 9999;
+}
+
+
 .navbar {
 	background-color: #333;
 	position: relative;
@@ -89,18 +100,30 @@ body {
 	outline: inherit; 
 }
 
-.stacked {
-	position: absolute;
-}
-
-.middle-aligned {
-	display: inline-block;
-	vertical-align: middle;
-}
-
 .right-aligned {
 	position: absolute;
 	right: 0;
+}
+
+.center-container {
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-box {
+    box-shadow:  rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;;
+
+    transition: all 500ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 0 0 400px;
 }
 
 
@@ -113,4 +136,18 @@ body {
 	display: inline-block;
 
 	width: 24px;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+
+    text-align: center;
+    padding: 5px;
+    background-color: #abbaba;
+    color: #000;
+	font-family: AgaveNerdFontMono;
 }
