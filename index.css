@@ -65,7 +65,7 @@ body {
 /* no text button */
 .navbar-ntbutton {
 	position: absolute;
-	padding: 18px 20px;
+	padding: 19px 20px;
 }
 
 
@@ -134,8 +134,8 @@ body {
 
 
 #bg-btn {
-	top: 5px;
-	right: 8px;
+	top: 7px;
+	right: 9px;
 }
 #bg-svg {
 	vertical-align: middle;
