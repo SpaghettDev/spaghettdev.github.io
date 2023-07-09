@@ -47,9 +47,11 @@ const toggleBGMode = (win, bool) => {
 	if (bool) {
 		winDocElem.style.setProperty("--bg", "#000");
 		winDocElem.style.setProperty("--text", "#fff");
+		winDocElem.style.setProperty("--box-shadow", "rgba(255, 255, 255, 0.1) 0px 4px 16px, rgba(255, 255, 255, 0.1) 0px 8px 24px, rgba(255, 255, 255, 0.1) 0px 16px 56px");
 	} else {
 		winDocElem.style.setProperty("--bg", "#fff");
 		winDocElem.style.setProperty("--text", "#000");
+		winDocElem.style.setProperty("--box-shadow", "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px");
 	}
 }
 
