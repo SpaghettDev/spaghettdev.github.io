@@ -14,7 +14,7 @@ const setCookie = (doc, name, value, days) => {
 		expires = "; expires=" + date.toUTCString();
 	}
 
-	doc.cookie = `${name}=${value || ""}${expires}; path=/; SameSite=None`;
+	doc.cookie = `${name}=${value || ""}${expires}; path=/; samesite=none; secure`;
 }
 
 /**
