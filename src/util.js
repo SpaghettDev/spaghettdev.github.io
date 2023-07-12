@@ -1,4 +1,5 @@
 /**
+ * Sets a cookie
  * 
  * @param {Document} doc 
  * @param {string} name 
@@ -18,10 +19,11 @@ const setCookie = (doc, name, value, days) => {
 }
 
 /**
+ * Gets a cookie
  * 
  * @param {Document} doc 
  * @param {string} name 
- * @returns 
+ * @returns {any|null}
  */
 const getCookie = (doc, name) => {
 	let nameEQ = name + "=";
@@ -37,6 +39,50 @@ const getCookie = (doc, name) => {
 }
 
 /**
+ * Creates a new item in localStorage
+ * 
+ * @param {Window} win
+ * @param {string} name
+ * @param {any} value
+ * @param {number} days
+ */
+const setLocalStorage = (win, name, value, days) => {
+	let date = new Date();
+	let dateNum = 0;
+	date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+	dateNum = date.getTime();
+
+	win.localStorage.setItem(name, JSON.stringify({
+		"value": value,
+		"end": dateNum
+	}));
+}
+
+/**
+ * Gets an item in localStorage, if it's expired, it is set to null
+ * 
+ * @param {Window} win
+ * @param {string} name 
+ * 
+ * @returns {any|null}
+ */
+const getLocalStorage = (win, name) => {
+	let item = win.localStorage.getItem(name);
+
+	if (item) {
+		let parsed = JSON.parse(item);
+		if (parsed && parsed["end"] < new Date().getTime()) {
+			win.localStorage.setItem(name, null);
+		} else {
+			return parsed["value"];
+		}
+	}
+
+	return null;
+}
+
+/**
+ * Toggles dark mode if bool is true
  * 
  * @param {Window} win
  * @param {boolean} bool
@@ -56,6 +102,7 @@ const toggleBGMode = (win, bool) => {
 }
 
 /**
+ * Yes
  * 
  * @param {Window} win
  */

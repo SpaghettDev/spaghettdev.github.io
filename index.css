@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'AgaveNerdFontMono';
-	src: url('fonts/AgaveNerdFontMono-Regular.ttf') format("truetype");
+	src: url("fonts/AgaveNerdFontMono-Regular.ttf") format("truetype");
 }
 :root {
 	--text: #000;

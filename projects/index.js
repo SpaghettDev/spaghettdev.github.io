@@ -1,16 +1,44 @@
-const showErrorPopup =  () => {
+/**
+ * Shows the error popup, pretty amazing
+ */
+const showErrorPopup = () => {
 	document.getElementById("alert-button").style.display = "";
 	document.getElementById("alert-button").checked = false;
 	document.getElementsByClassName("alert-parent")[0].style.display = "block";
 }
 
-const getRepoData = async (projectLink) => {
-	return fetch(projectLink.replace("github.com", "api.github.com/repos"))
+/**
+ * Gets a repo's data from api.github.com, if already fetched within a day, returns
+ * the cached version
+ * 
+ * @param {Object} project 
+ * @returns {Object}
+ */
+const getRepoData = async (project) => {
+	const localValue = getLocalStorage(window, `cookie_${project["project_name"]}`);
+	if (localValue != null) {
+		return localValue;
+	}
+
+	return fetch(project["project_link"].replace("github.com", "api.github.com/repos"))
 		.then(res => res.json())
-		.then(res => res)
+		.then(res => {
+			if (res && Object.keys(res).length < 3) {
+				return {};
+			}
+
+			setLocalStorage(window, `cookie_${project["project_name"]}`, res, 1);
+			return res;
+		})
 		.catch(e => {});
 }
 
+/**
+ * Creates a new project box using the project argument as base for the placeholders
+ * 
+ * @param {object} project 
+ * @returns {Node}
+ */
 const createProjectBox = async (project) => {
 	const node = document.getElementsByClassName("project-box-wrapper")[0].cloneNode(true);
 	const nodeContent = node.childNodes[1].childNodes[1].childNodes;
@@ -27,9 +55,9 @@ const createProjectBox = async (project) => {
 			if (nodeContentText.includes("gh_")) {
 				const splitText = nodeContentText.split(/[\{\}]/);
 
-				nodeContent[i].childNodes[1].textContent = "...";
 				let fetchedValue = "...";
-				const response = await getRepoData(project["project_link"]);
+				nodeContent[i].childNodes[1].textContent = fetchedValue;
+				const response = await getRepoData(project);
 
 				if (!response || Object.keys(response).length === 0) {
 					showErrorPopup();
@@ -64,12 +92,14 @@ const createProjectBox = async (project) => {
 	return node;
 }
 
+
 if (getCookie(document, "bg") == null) {
 	setCookie(document, "bg", "on");
 } else {
 	toggleBGMode(window, isBGModeToggled(window));
 	setCookie(document, "bg", isBGModeToggled(window) ? "on" : "off");
 }
+
 
 fetch("/api/projects/projects.json")
 	.then(r => r.json())
