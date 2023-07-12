@@ -73,10 +73,6 @@ body {
 .navbar-ntbutton {
 	position: absolute;
 	padding: 19px 20px;
-
-	@media (max-width: 576px) {
-		padding: 17px 20px;
-	}
 }
 
 

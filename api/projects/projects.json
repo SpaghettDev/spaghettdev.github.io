@@ -3,7 +3,53 @@
         {
             "project_name": "GD-Roulette",
             "project_author": "SpaghettDev",
-            "project_link": "https://github.com/SpaghettDev/GD-Roulette"
+            "project_link": "https://github.com/SpaghettDev/GD-Roulette",
+            "topic": "Geometry Dash"
+        },
+        {
+            "project_name": "gd-addresses",
+            "project_author": "SpaghettDev",
+            "project_link": "https://github.com/SpaghettDev/gd-addresses",
+            "topic": "Geometry Dash"
+        },
+        {
+            "project_name": "GDMegaOverlay",
+            "project_author": "maxnut",
+            "project_link": "https://github.com/maxnut/GDMegaOverlay",
+            "topic": "Geometry Dash"
+        }
+    ],
+    
+    "old": [
+        {
+            "project_name": "nightclub-hax",
+            "project_author": "SpaghettDev",
+            "project_link": "https://github.com/SpaghettDev/nightclub_hax",
+            "topic": "GTA V"
+        },
+        {
+            "project_name": "Pico-Updated",
+            "project_author": "SpaghettDev",
+            "project_link": "https://github.com/SpaghettDev/Pico-Updated",
+            "topic": "GTA V"
+        },
+        {
+            "project_name": "GD-Save-Decoder",
+            "project_author": "SpaghettDev",
+            "project_link": "https://github.com/SpaghettDev/GD-Save-Decoder",
+            "topic": "Geometry Dash"
+        },
+        {
+            "project_name": "Ghidra-FromGetOffset",
+            "project_author": "SpaghettDev",
+            "project_link": "https://github.com/SpaghettDev/Ghidra-FromGetOffset",
+            "topic": "Ghidra"
+        },
+        {
+            "project_name": "YimMenu",
+            "project_author": "YimMenu",
+            "project_link": "https://github.com/YimMenu/YimMenu",
+            "topic": "GTA V"
         }
     ]
 }
