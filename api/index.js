@@ -18,7 +18,7 @@ reqApi = reqApi.slice(4);
 switch (reqApi[0])
 {
     case "?test":
-        redirect("/test");
+        redirect("/api/test");
         break;
 
     case "?projects":
